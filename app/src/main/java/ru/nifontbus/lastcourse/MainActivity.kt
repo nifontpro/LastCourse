@@ -6,12 +6,14 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
-import androidx.compose.material.Text
-import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
 import dagger.hilt.android.AndroidEntryPoint
+import ru.nifontbus.lastcourse.navigation.Route
 import ru.nifontbus.lastcourse.ui.theme.LastCourseTheme
+import ru.nifontbus.les1_presenter.Lesson1Screen
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
@@ -19,27 +21,28 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             LastCourseTheme {
-                // A surface container using the 'background' color from the theme
+                val navController = rememberNavController()
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
-                    Greeting("Android")
+                    NavHost(
+                        navController = navController,
+                        startDestination = Route.MAIN
+                    ) {
+                        composable(Route.MAIN) {
+                            MainScreen(
+                                onLesson1 = {
+                                    navController.navigate(Route.LESSON1)
+                                }
+                            )
+                        }
+                        composable(Route.LESSON1) {
+                            Lesson1Screen()
+                        }
+                    }
                 }
             }
         }
-    }
-}
-
-@Composable
-fun Greeting(name: String) {
-    Text(text = "Hello $name!")
-}
-
-@Preview(showBackground = true)
-@Composable
-fun DefaultPreview() {
-    LastCourseTheme {
-        Greeting("Android")
     }
 }

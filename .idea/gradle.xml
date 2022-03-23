@@ -13,6 +13,10 @@
             <option value="$PROJECT_DIR$/buildSrc" />
             <option value="$PROJECT_DIR$/core" />
             <option value="$PROJECT_DIR$/core-ui" />
+            <option value="$PROJECT_DIR$/lesson1" />
+            <option value="$PROJECT_DIR$/lesson1/les1_data" />
+            <option value="$PROJECT_DIR$/lesson1/les1_domain" />
+            <option value="$PROJECT_DIR$/lesson1/les1_presenter" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

@@ -16,3 +16,7 @@ rootProject.name = "Last Course"
 include ':app'
 include ':core'
 include ':core-ui'
+include ':lesson1'
+include ':lesson1:les1_data'
+include ':lesson1:les1_domain'
+include ':lesson1:les1_presenter'

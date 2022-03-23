@@ -3,4 +3,5 @@ apply {
 }
 
 dependencies {
+    "implementation"(project(Modules.les1Domain))
 }

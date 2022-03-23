@@ -67,9 +67,9 @@ dependencies {
     implementation(project(Modules.core))
     implementation(project(Modules.coreUi))
 
-    /*implementation(project(Modules.eventsData))
-    implementation(project(Modules.eventsDomain))
-    implementation(project(Modules.eventsPresenter))*/
+    implementation(project(Modules.les1Data))
+    implementation(project(Modules.les1Domain))
+    implementation(project(Modules.les1Presenter))
 
     implementation(AndroidX.coreKtx)
     implementation(AndroidX.appCompat)
