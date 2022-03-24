@@ -1,39 +1,51 @@
 package ru.nifontbus.lastcourse.ui.theme
 
+import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.darkColors
 import androidx.compose.material.lightColors
 import androidx.compose.runtime.Composable
-
-private val DarkColorPalette = darkColors(
-    primary = Purple200,
-    primaryVariant = Purple700,
-    secondary = Teal200
-)
+import ru.nifontbus.core_ui.*
 
 private val LightColorPalette = lightColors(
-    primary = Purple500,
-    primaryVariant = Purple700,
-    secondary = Teal200
+    primary = Primary,
+    primaryVariant = PrimaryVariant,
+    secondary = Secondary,
+    secondaryVariant = SecondaryVariant,
+    background = Background,
+    surface = Surface,
+    onPrimary = OnPrimary,
+    onSecondary = OnSecondary,
+    onBackground = OnBackground,
+    onSurface = OnSurface,
+    onError = OnError
+)
 
-    /* Other default colors to override
-    background = Color.White,
-    surface = Color.White,
-    onPrimary = Color.White,
-    onSecondary = Color.Black,
-    onBackground = Color.Black,
-    onSurface = Color.Black,
-    */
+private val DarkColorPalette = darkColors(
+    primary = PrimaryNight,
+    primaryVariant = PrimaryVariantNight,
+    secondary = SecondaryNight,
+    secondaryVariant = SecondaryVariantNight,
+    background = BackgroundNight,
+    surface = SurfaceNight,
+    onPrimary = OnPrimaryNight,
+    onSecondary = OnSecondaryNight,
+    onBackground = OnBackgroundNight,
+    onSurface = OnSurfaceNight,
+    onError = OnErrorNight
 )
 
 @Composable
 fun LastCourseTheme(darkTheme: Boolean = isSystemInDarkTheme(), content: @Composable () -> Unit) {
-    val colors = if (darkTheme) {
-        DarkColorPalette
-    } else {
-        LightColorPalette
-    }
+
+    val colors =
+        if (Build.VERSION.SDK_INT >= 30  ) {
+            if (darkTheme) DarkColorPalette else LightColorPalette
+        } else {
+            LightColorPalette
+        }
+
 
     MaterialTheme(
         colors = colors,

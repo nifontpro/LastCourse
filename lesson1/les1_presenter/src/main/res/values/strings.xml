@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="sSpotInfo">Координаты (%f, %f)</string>
+    <string name="sLongTap">Долгое нажатие для удаления</string>
+    <string name="sLocatePermission">Необходимо разрешить данные о местоположении</string>
+</resources>
