@@ -13,7 +13,7 @@ import androidx.navigation.compose.rememberNavController
 import dagger.hilt.android.AndroidEntryPoint
 import ru.nifontbus.lastcourse.navigation.Route
 import ru.nifontbus.lastcourse.ui.theme.LastCourseTheme
-import ru.nifontbus.les1_presenter.Lesson1Screen
+import ru.nifontbus.les1_presenter.MapScreen
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
@@ -38,7 +38,7 @@ class MainActivity : ComponentActivity() {
                             )
                         }
                         composable(Route.LESSON1) {
-                            Lesson1Screen()
+                            MapScreen()
                         }
                     }
                 }

@@ -10,9 +10,9 @@ buildscript {
 
         classpath(Build.hiltAndroidGradlePlugin)
         classpath(Build.kotlinGradlePlugin)
-        classpath ("org.jetbrains.kotlin:kotlin-serialization:1.6.10")
-        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.6.10")
 //        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.6.10") // For update
+
+        classpath (Google.secretsPlugin) // For API-KEY set in local.properties
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files

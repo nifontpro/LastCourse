@@ -4,6 +4,7 @@ plugins {
     id("dagger.hilt.android.plugin")
     id("kotlin-kapt")
     id("kotlin-parcelize")
+    id("com.google.android.libraries.mapsplatform.secrets-gradle-plugin") // For API-KEY set in local.properties
 }
 
 android {
@@ -58,8 +59,7 @@ dependencies {
     implementation(Compose.viewModelCompose)
     implementation(Compose.activityCompose)
     implementation(Compose.materialIcon)
-    implementation(Compose.splashScreen)
-    implementation (Compose.permission)
+    implementation(Compose.permission)
 
     implementation(DaggerHilt.hiltAndroid)
     kapt(DaggerHilt.hiltCompiler)
@@ -75,8 +75,6 @@ dependencies {
     implementation(AndroidX.appCompat)
 
     implementation(Coil.coilCompose)
-
-    implementation(Google.material)
 
     testImplementation(Testing.junit4)
     testImplementation(Testing.junitAndroidExt)
@@ -98,4 +96,11 @@ dependencies {
     androidTestImplementation(Testing.hiltTesting)
     kaptAndroidTest(DaggerHilt.hiltCompiler)
     androidTestImplementation(Testing.testRunner)
+}
+
+secrets {
+    // To add your Maps API key to this project:
+    // 1. Add this line to your local.properties file, where YOUR_API_KEY is your API key:
+    //        MAPS_API_KEY=YOUR_API_KEY
+    defaultPropertiesFileName = "local.properties"
 }

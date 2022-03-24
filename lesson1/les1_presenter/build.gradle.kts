@@ -4,4 +4,6 @@ apply {
 
 dependencies {
     "implementation"(project(Modules.les1Domain))
+    "implementation"(Google.mapsCompose)
+    "implementation"(Google.maps)
 }
