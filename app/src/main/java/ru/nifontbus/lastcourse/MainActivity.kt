@@ -10,13 +10,17 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.google.accompanist.permissions.ExperimentalPermissionsApi
 import dagger.hilt.android.AndroidEntryPoint
 import ru.nifontbus.lastcourse.navigation.Route
 import ru.nifontbus.lastcourse.ui.theme.LastCourseTheme
 import ru.nifontbus.les1_presenter.MapScreen
 
+@ExperimentalPermissionsApi
+
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
