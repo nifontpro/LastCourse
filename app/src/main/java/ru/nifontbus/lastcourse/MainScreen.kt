@@ -15,7 +15,8 @@ import ru.nifontbus.core_ui.normalPadding
 
 @Composable
 fun MainScreen(
-    onLesson1: () -> Unit
+    onLesson1: () -> Unit,
+    onLesson2: () -> Unit,
 ) {
     BoxWithConstraints(
         modifier = Modifier.fillMaxSize()
@@ -23,7 +24,10 @@ fun MainScreen(
         val width = maxWidth
         Column {
             Header(width)
-            ButtonList(onLesson1 = onLesson1)
+            ButtonList(
+                onLesson1 = onLesson1,
+                onLesson2 = onLesson2
+            )
         }
     }
 }
@@ -54,7 +58,8 @@ private fun Header(width: Dp) {
 
 @Composable
 private fun ButtonList(
-    onLesson1: () -> Unit
+    onLesson1: () -> Unit,
+    onLesson2: () -> Unit,
 ) {
     Column(
         modifier = Modifier
@@ -65,6 +70,15 @@ private fun ButtonList(
         Button(onClick = onLesson1) {
             Text(
                 text = stringResource(R.string.sLesson1),
+                style = MaterialTheme.typography.h5,
+                modifier = Modifier.fillMaxWidth(),
+                textAlign = TextAlign.Center
+            )
+        }
+
+        Button(onClick = onLesson2) {
+            Text(
+                text = stringResource(R.string.sLesson2),
                 style = MaterialTheme.typography.h5,
                 modifier = Modifier.fillMaxWidth(),
                 textAlign = TextAlign.Center

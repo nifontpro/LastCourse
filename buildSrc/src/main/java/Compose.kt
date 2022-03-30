@@ -26,4 +26,8 @@ object Compose {
 
     private const val splashVersion = "1.0.0-beta01"
     const val splashScreen = "androidx.core:core-splashscreen:$splashVersion"
+
+    private const val pagingVersion = "1.0.0-alpha14"
+    const val paging = "androidx.paging:paging-compose:$pagingVersion"
+
 }

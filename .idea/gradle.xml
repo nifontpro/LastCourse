@@ -19,6 +19,32 @@
             <option value="$PROJECT_DIR$/lesson1/les1_domain" />
             <option value="$PROJECT_DIR$/lesson1/les1_presenter" />
             <option value="$PROJECT_DIR$/lesson2" />
+            <option value="$PROJECT_DIR$/lesson2/les2_data" />
+            <option value="$PROJECT_DIR$/lesson2/les2_domain" />
+            <option value="$PROJECT_DIR$/lesson2/les2_presenter" />
+          </set>
+        </option>
+        <option name="resolveModulePerSourceSet" value="false" />
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="testRunner" value="GRADLE" />
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/buildSrc" />
+            <option value="$PROJECT_DIR$/core" />
+            <option value="$PROJECT_DIR$/core-ui" />
+            <option value="$PROJECT_DIR$/lesson1" />
+            <option value="$PROJECT_DIR$/lesson1/les1_data" />
+            <option value="$PROJECT_DIR$/lesson1/les1_domain" />
+            <option value="$PROJECT_DIR$/lesson1/les1_presenter" />
+            <option value="$PROJECT_DIR$/lesson2" />
+            <option value="$PROJECT_DIR$/lesson2/les2_data" />
+            <option value="$PROJECT_DIR$/lesson2/les2_domain" />
+            <option value="$PROJECT_DIR$/lesson2/les2_presenter" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
