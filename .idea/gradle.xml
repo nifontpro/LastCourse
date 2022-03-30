@@ -18,6 +18,7 @@
             <option value="$PROJECT_DIR$/lesson1/les1_data" />
             <option value="$PROJECT_DIR$/lesson1/les1_domain" />
             <option value="$PROJECT_DIR$/lesson1/les1_presenter" />
+            <option value="$PROJECT_DIR$/lesson2" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

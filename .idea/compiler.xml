@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
-    <bytecodeTargetLevel target="11" />
+    <bytecodeTargetLevel target="1.7">
+      <module name="Last_Course.app" target="11" />
+      <module name="Last_Course.core" target="11" />
+      <module name="Last_Course.core-ui" target="11" />
+      <module name="Last_Course.lesson1.les1_data" target="11" />
+      <module name="Last_Course.lesson1.les1_domain" target="11" />
+      <module name="Last_Course.lesson1.les1_presenter" target="11" />
+      <module name="LastCourse.buildSrc" target="11" />
+    </bytecodeTargetLevel>
   </component>
 </project>
