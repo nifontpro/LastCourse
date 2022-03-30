@@ -10,12 +10,14 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.Dp
+import androidx.compose.ui.unit.dp
 import ru.nifontbus.core_ui.bigPadding
 import ru.nifontbus.core_ui.normalPadding
 
 @Composable
 fun MainScreen(
-    onLesson1: () -> Unit
+    onLesson1: () -> Unit,
+    onLesson2: () -> Unit,
 ) {
     BoxWithConstraints(
         modifier = Modifier.fillMaxSize()
@@ -23,7 +25,10 @@ fun MainScreen(
         val width = maxWidth
         Column {
             Header(width)
-            ButtonList(onLesson1 = onLesson1)
+            ButtonList(
+                onLesson1 = onLesson1,
+                onLesson2 = onLesson2
+            )
         }
     }
 }
@@ -54,7 +59,8 @@ private fun Header(width: Dp) {
 
 @Composable
 private fun ButtonList(
-    onLesson1: () -> Unit
+    onLesson1: () -> Unit,
+    onLesson2: () -> Unit,
 ) {
     Column(
         modifier = Modifier
@@ -62,9 +68,18 @@ private fun ButtonList(
             .padding(normalPadding)
     )
     {
-        Button(onClick = onLesson1) {
+        Button(onClick = onLesson1, modifier = Modifier.padding(8.dp)) {
             Text(
                 text = stringResource(R.string.sLesson1),
+                style = MaterialTheme.typography.h5,
+                modifier = Modifier.fillMaxWidth(),
+                textAlign = TextAlign.Center
+            )
+        }
+
+        Button(onClick = onLesson2, modifier = Modifier.padding(8.dp)) {
+            Text(
+                text = stringResource(R.string.sLesson2),
                 style = MaterialTheme.typography.h5,
                 modifier = Modifier.fillMaxWidth(),
                 textAlign = TextAlign.Center

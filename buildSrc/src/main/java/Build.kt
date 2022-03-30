@@ -6,4 +6,6 @@ object Build {
 
     private const val hiltAndroidGradlePluginVersion = "2.40.5"
     const val hiltAndroidGradlePlugin = "com.google.dagger:hilt-android-gradle-plugin:$hiltAndroidGradlePluginVersion"
+
+    const val kotlinSerialization = "org.jetbrains.kotlin:kotlin-serialization:${Kotlin.version}"
 }

@@ -10,12 +10,15 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import androidx.paging.ExperimentalPagingApi
 import com.google.accompanist.permissions.ExperimentalPermissionsApi
 import dagger.hilt.android.AndroidEntryPoint
 import ru.nifontbus.lastcourse.navigation.Route
 import ru.nifontbus.lastcourse.ui.theme.LastCourseTheme
 import ru.nifontbus.les1_presenter.MapScreen
+import ru.nifontbus.les2_presenter.MoviesScreen
 
+@ExperimentalPagingApi
 @ExperimentalPermissionsApi
 
 @AndroidEntryPoint
@@ -38,11 +41,19 @@ class MainActivity : ComponentActivity() {
                             MainScreen(
                                 onLesson1 = {
                                     navController.navigate(Route.LESSON1)
+                                },
+                                onLesson2 = {
+                                    navController.navigate(Route.LESSON2)
                                 }
                             )
                         }
+
                         composable(Route.LESSON1) {
                             MapScreen()
+                        }
+
+                        composable(Route.LESSON2) {
+                            MoviesScreen()
                         }
                     }
                 }

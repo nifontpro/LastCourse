@@ -60,6 +60,7 @@ dependencies {
     implementation(Compose.activityCompose)
     implementation(Compose.materialIcon)
     implementation(Compose.permission)
+    "implementation" (Compose.paging)
 
     implementation(DaggerHilt.hiltAndroid)
     kapt(DaggerHilt.hiltCompiler)
@@ -70,6 +71,10 @@ dependencies {
     implementation(project(Modules.les1Data))
     implementation(project(Modules.les1Domain))
     implementation(project(Modules.les1Presenter))
+
+    implementation(project(Modules.les2Data))
+    implementation(project(Modules.les2Domain))
+    implementation(project(Modules.les2Presenter))
 
     implementation(AndroidX.coreKtx)
     implementation(AndroidX.appCompat)
