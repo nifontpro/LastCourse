@@ -10,6 +10,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.Dp
+import androidx.compose.ui.unit.dp
 import ru.nifontbus.core_ui.bigPadding
 import ru.nifontbus.core_ui.normalPadding
 
@@ -67,7 +68,7 @@ private fun ButtonList(
             .padding(normalPadding)
     )
     {
-        Button(onClick = onLesson1) {
+        Button(onClick = onLesson1, modifier = Modifier.padding(8.dp)) {
             Text(
                 text = stringResource(R.string.sLesson1),
                 style = MaterialTheme.typography.h5,
@@ -76,7 +77,7 @@ private fun ButtonList(
             )
         }
 
-        Button(onClick = onLesson2) {
+        Button(onClick = onLesson2, modifier = Modifier.padding(8.dp)) {
             Text(
                 text = stringResource(R.string.sLesson2),
                 style = MaterialTheme.typography.h5,

@@ -1,10 +1,12 @@
 package ru.nifontbus.les2_presenter
 
+import android.util.Log
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Scaffold
+import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -35,14 +37,14 @@ fun MoviesScreen() {
 private fun ListContent(movies: LazyPagingItems<Movie>) {
     LazyColumn(
         modifier = Modifier.fillMaxSize(),
-        contentPadding = PaddingValues(all = 12.dp),
-        verticalArrangement = Arrangement.spacedBy(12.dp)
+        contentPadding = PaddingValues(all = 8.dp),
+        verticalArrangement = Arrangement.spacedBy(8.dp)
     ) {
         items(
             items = movies,
-           /* key = { movie ->
-                movie.id
-            }*/
+            /* key = { movie ->
+                 movie.id
+             }*/
         ) { movieItem ->
             movieItem?.let {
                 MovieItem(it)
@@ -54,6 +56,7 @@ private fun ListContent(movies: LazyPagingItems<Movie>) {
 @ExperimentalCoilApi
 @Composable
 fun MovieItem(movie: Movie) {
+    Log.e("my", "movie = $movie")
     val painter =
         rememberImagePainter(data = "https://image.tmdb.org/t/p/w500${movie.backdropPath}") {
             crossfade(durationMillis = 1000)
@@ -61,19 +64,36 @@ fun MovieItem(movie: Movie) {
             placeholder(R.drawable.ic_placeholder)
         }
     Box(
-        modifier = Modifier
-            .clickable {
-            }
-            .height(300.dp)
-            .fillMaxWidth(),
+        modifier = Modifier.fillMaxWidth(),
         contentAlignment = Alignment.BottomCenter
     ) {
-        Image(
-            modifier = Modifier.fillMaxSize(),
-            painter = painter,
-            contentDescription = "Movie Image",
-            contentScale = ContentScale.Crop
-        )
+        Column(
+            verticalArrangement = Arrangement.SpaceBetween,
+            modifier = Modifier.fillMaxWidth()
+        ) {
+            Image(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(200.dp),
+                painter = painter,
+                contentDescription = "Movie Image",
+                contentScale = ContentScale.FillWidth
+            )
+            Text(
+                text = movie.title,
+                style = MaterialTheme.typography.h6,
+            )
+            Text(
+                text = movie.releaseDate,
+                style = MaterialTheme.typography.body1,
+                color = MaterialTheme.colors.onSurface
+            )
+            Text(
+                text = "Зрительский рейтинг: ${movie.voteAverage}",
+                style = MaterialTheme.typography.body2,
+                color = MaterialTheme.colors.onSurface
+            )
+        }
     }
 }
 

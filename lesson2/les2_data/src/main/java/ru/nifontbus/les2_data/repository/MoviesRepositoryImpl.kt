@@ -44,5 +44,4 @@ class MoviesRepositoryImpl @Inject constructor(
             pagingData.map { it.toMovie() }
         }
     }
-
 }

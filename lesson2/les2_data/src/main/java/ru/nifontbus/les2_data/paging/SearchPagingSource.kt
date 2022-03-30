@@ -32,14 +32,14 @@ class SearchPagingSource(
         }
     }
 
-/*    override fun getRefreshKey(state: PagingState<Int, MoviesDto>): Int? {
-        return state.anchorPosition
-    }*/
-
     override fun getRefreshKey(state: PagingState<Int, MoviesDto>): Int? {
+        return state.anchorPosition
+    }
+
+/*    override fun getRefreshKey(state: PagingState<Int, MoviesDto>): Int? {
         val anchorPosition = state.anchorPosition ?: return null
         val anchorPage = state.closestPageToPosition(anchorPosition) ?: return null
         return anchorPage.prevKey?.plus(1) ?: anchorPage.nextKey?.minus(1)
-    }
+    }*/
 
 }
